@@ -1,0 +1,20 @@
+##################################################
+# This file is published under the MIT License
+#
+# Copyright (C) 2019-2020 dragon-archer
+#
+# @file     .gitignore
+# @brief    The Git Ignore file
+# @version  v0.0.1
+# @author   dragon-archer
+##################################################
+
+# Visual Studio
+.vs/
+
+# CMake
+build/
+CMakeSettings.json
+
+# CPack
+pack/
