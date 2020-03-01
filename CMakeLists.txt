@@ -9,7 +9,7 @@
 # @author   dragon-archer
 ##################################################
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.16) # for target_precompiled_headers
 project(cppjson
 		VERSION 0.0.1
 		DESCRIPTION "A json parser for C++"
@@ -25,4 +25,8 @@ target_precompile_headers(cppjson PRIVATE include/pch.h)
 target_compile_options(cppjson PRIVATE
 					   $<$<CXX_COMPILER_ID:GNU,Clang>:-std=c++14>
 					   $<$<CXX_COMPILER_ID:MSVC>:/std:c++14>)
+
+# Build options
+option(USE_UNORDERED_MAP "Use std::unordered_map instead of std::map" ON)
+target_compile_definitions(cppjson PRIVATE $<$<BOOL:USE_UNORDERED_MAP>:CPPJSON_USE_UNORDERED_MAP>)
 
