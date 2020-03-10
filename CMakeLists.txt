@@ -20,7 +20,7 @@ set(SRC ${SRC_DIR})
 
 add_library(cppjson SHARED ${SRC})
 target_include_directories(cppjson PUBLIC include)
-target_precompile_headers(cppjson PRIVATE include/pch.h)
+target_precompile_headers(cppjson PRIVATE include/json/pch.h)
 # Set C++ standard to ISO C++ 14
 target_compile_options(cppjson PRIVATE
 					   $<$<CXX_COMPILER_ID:GNU,Clang>:-std=c++14>
